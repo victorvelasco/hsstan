@@ -180,7 +180,7 @@ hsstan <- function(x, covs.model, penalized=NULL, family=gaussian,
         ## run the stan model
         samples <- rstan::sampling(stanmodels[[model]], data=data.input,
                                    iter=iter, warmup=warmup, seed=seed, ...,
-                                   pars=hs.pars, include=keep.hs.pars,
+                                   pars=NA,
                                    control=list(adapt_delta=adapt.delta))
         if (is.na(nrow(samples)))
             stop("rstan::sampling failed, see error message above.", call.=FALSE)
